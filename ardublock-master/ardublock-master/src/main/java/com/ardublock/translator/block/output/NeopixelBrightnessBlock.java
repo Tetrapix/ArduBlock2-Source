@@ -11,21 +11,18 @@ public class NeopixelBrightnessBlock  extends TranslatorBlock {
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
 	}
-	
+
 	//@Override
 		public String toCode() throws SocketNullException, SubroutineNotDeclaredException
 		{
-			String Pin ;
 			String Brightness;
 
 			TranslatorBlock translatorBlock = this.getRequiredTranslatorBlockAtSocket(0);
-			Pin = translatorBlock.toCode().replaceAll("\\s*_.new\\b\\s*", "");
-			translatorBlock = this.getRequiredTranslatorBlockAtSocket(1);
 			Brightness = translatorBlock.toCode().replaceAll("\\s*_.new\\b\\s*", "");
-			
-			String ret = "strip_pin"+Pin+".setBrightness("+Brightness +");\n";
-			
+
+			String ret = "strip.setBrightness("+Brightness +");\n";
+
 			return codePrefix + ret + codeSuffix;
-				
+
 		}
 }

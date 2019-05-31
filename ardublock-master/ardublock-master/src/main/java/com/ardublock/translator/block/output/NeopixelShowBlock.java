@@ -15,13 +15,13 @@ public class NeopixelShowBlock  extends TranslatorBlock {
 	//@Override
 		public String toCode() throws SocketNullException, SubroutineNotDeclaredException
 		{
-			String Pin ;
+			/*String Pin ;
 
 			TranslatorBlock translatorBlock = this.getRequiredTranslatorBlockAtSocket(0);
-			Pin = translatorBlock.toCode().replaceAll("\\s*_.new\\b\\s*", "");
+			Pin = translatorBlock.toCode().replaceAll("\\s*_.new\\b\\s*", "");*/
 			
 			
-			String ret = "strip_pin"+Pin+".show();\n";
+			String ret = "strip.show();\n";
 			
 			return codePrefix + ret + codeSuffix;
 				
